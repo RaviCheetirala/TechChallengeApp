@@ -2,6 +2,10 @@
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
+# Task 1 is to read the secrets from the key-vault
+# Task 2 is to create the Post Gre SQL DB  using the ARM template
+# Task 3 is to run the config scripts for the DB
+# Task 4 is to create the App Service with the docker image of the App
 
 trigger:
 - master
