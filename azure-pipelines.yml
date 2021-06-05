@@ -28,5 +28,18 @@ steps:
     csmFile: 'ARMTemplates/arm_azurepostgsql.json'
     csmParametersFile: 'ARMTemplates/arm_azurepostgsql.parameters.json'
     overrideParameters: '-administratorLoginPassword $(dbpassword)'
-    deploymentMode: 'Incremental'
+    deploymentMode: 'Complete'
+- task: AzureResourceManagerTemplateDeployment@3
+  inputs:
+    deploymentScope: 'Resource Group'
+    azureResourceManagerConnection: 'AppSubscription'
+    subscriptionId: 'd0f8a7ea-2fb9-44f3-830a-6e48ae4f735b'
+    action: 'Create Or Update Resource Group'
+    resourceGroupName: 'TestARMDeployment'
+    location: 'Australia East'
+    templateLocation: 'Linked artifact'
+    csmFile: 'ARMTemplates/arm_appservice.json'
+    csmParametersFile: 'ARMTemplates/arm_appservice.parameters.json'
+    deploymentMode: 'Complete'    
+
 
