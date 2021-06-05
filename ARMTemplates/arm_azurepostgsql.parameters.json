@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "serverName": {
-            "value": "ravixrca4postgresql2"
+            "value": "ravixrca4postgresql"
         },
         "location": {
             "value": "australiaeast"
