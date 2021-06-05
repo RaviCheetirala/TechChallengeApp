@@ -42,7 +42,7 @@
             "value": "servianuser"
         },
         "administratorLoginPassword": {
-            "value": "admin123$"
+            "value": ""
         },
         "previewFeature": {
             "value": ""
