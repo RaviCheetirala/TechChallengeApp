@@ -12,7 +12,7 @@
             "value": "Australia East"
         },
         "hostingPlanName": {
-            "value": "ASP-ServianRG-a2ad"
+            "value": "ASP-ServianAssignmentRG-a2ad"
         },
         "serverFarmResourceGroup": {
             "value": "ServianAssignmentRG"
