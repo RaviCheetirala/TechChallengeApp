@@ -41,13 +41,13 @@ type Config struct {
 }
 
 func getDbInfo(cfg Config) string {
-	return fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=disable",
+	return fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=require",
 		cfg.DbHost, cfg.DbPort, cfg.DbUser, cfg.DbPassword, cfg.DbName)
 }
 
 // RebuildDb drops the database and recreates it
 func RebuildDb(cfg Config) error {
-	dbinfo := fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=postgres sslmode=disable",
+	dbinfo := fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=postgres sslmode=require",
 		cfg.DbHost, cfg.DbPort, cfg.DbUser, cfg.DbPassword)
 
 	db, err := sql.Open("postgres", dbinfo)
@@ -70,13 +70,12 @@ func RebuildDb(cfg Config) error {
 
 	query = fmt.Sprintf(`CREATE DATABASE %s
 WITH
-OWNER = %s
+OWNER = servianappuser 
 ENCODING = 'UTF8'
 LC_COLLATE = 'en_US.utf8'
 LC_CTYPE = 'en_US.utf8'
-TABLESPACE = pg_default
 CONNECTION LIMIT = -1
-TEMPLATE template0;`, cfg.DbName, cfg.DbUser)
+TEMPLATE template0;`, cfg.DbName)
 
 	fmt.Println(query)
 
