@@ -1,0 +1,32 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: AzureKeyVault@2
+  inputs:
+    azureSubscription: 'AppSubscription'
+    KeyVaultName: 'servianappkv'
+    SecretsFilter: 'dbpassword'
+    RunAsPreJob: true
+- task: AzureResourceManagerTemplateDeployment@3
+  inputs:
+    deploymentScope: 'Resource Group'
+    azureResourceManagerConnection: 'AppSubscription'
+    subscriptionId: 'd0f8a7ea-2fb9-44f3-830a-6e48ae4f735b'
+    action: 'Create Or Update Resource Group'
+    resourceGroupName: 'TestARMDeployment'
+    location: 'Australia East'
+    templateLocation: 'Linked artifact'
+    csmFile: 'ARMTemplates/arm_azurepostgsql.json'
+    csmParametersFile: 'ARMTemplates/arm_azurepostgsql.parameters.json'
+    overrideParameters: '-administratorLoginPassword $(dbpassword)'
+    deploymentMode: 'Incremental'
+
