@@ -13,7 +13,7 @@ steps:
 - task: AzureKeyVault@2
   inputs:
     azureSubscription: 'AppSubscription'
-    KeyVaultName: 'servianappkv'
+    KeyVaultName: 'raviservianappkv'
     SecretsFilter: 'dbpassword'
     RunAsPreJob: true
 - task: AzureResourceManagerTemplateDeployment@3
