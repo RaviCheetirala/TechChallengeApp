@@ -1,0 +1,39 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "subscriptionId": {
+            "value": "d0f8a7ea-2fb9-44f3-830a-6e48ae4f735b"
+        },
+        "name": {
+            "value": "ServianTechAssignmentApp"
+        },
+        "location": {
+            "value": "Australia East"
+        },
+        "hostingPlanName": {
+            "value": "ASP-ServianRG-a2ad"
+        },
+        "serverFarmResourceGroup": {
+            "value": "ServianRG"
+        },
+        "alwaysOn": {
+            "value": false
+        },
+        "linuxFxVersion": {
+            "value": "DOCKER|318300/servianapp:latest"
+        },
+        "dockerRegistryUrl": {
+            "value": "https://index.docker.io"
+        },
+        "dockerRegistryUsername": {
+            "value": ""
+        },
+        "dockerRegistryPassword": {
+            "value": null
+        },
+        "dockerRegistryStartupCommand": {
+            "value": ""
+        }
+    }
+}
