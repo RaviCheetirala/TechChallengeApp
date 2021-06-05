@@ -6,7 +6,7 @@
             "value": "d0f8a7ea-2fb9-44f3-830a-6e48ae4f735b"
         },
         "name": {
-            "value": "ServianTechAssignmentApp"
+            "value": "RaviServianTechAssignmentApp"
         },
         "location": {
             "value": "Australia East"
@@ -15,7 +15,7 @@
             "value": "ASP-ServianRG-a2ad"
         },
         "serverFarmResourceGroup": {
-            "value": "ServianRG"
+            "value": "ServianAssignmentRG"
         },
         "alwaysOn": {
             "value": false
