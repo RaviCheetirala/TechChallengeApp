@@ -28,7 +28,7 @@ steps:
     csmFile: 'ARMTemplates/arm_azurepostgsql.json'
     csmParametersFile: 'ARMTemplates/arm_azurepostgsql.parameters.json'
     overrideParameters: '-administratorLoginPassword $(dbpassword)'
-    deploymentMode: 'Complete'
+    deploymentMode: 'Incremental'
 - task: AzureResourceManagerTemplateDeployment@3
   inputs:
     deploymentScope: 'Resource Group'
@@ -40,6 +40,6 @@ steps:
     templateLocation: 'Linked artifact'
     csmFile: 'ARMTemplates/arm_appservice.json'
     csmParametersFile: 'ARMTemplates/arm_appservice.parameters.json'
-    deploymentMode: 'Complete'    
+    deploymentMode: 'Incremental'    
 
 
