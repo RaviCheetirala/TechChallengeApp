@@ -37,7 +37,7 @@ steps:
     inlineScript: |
       az postgres  server firewall-rule create --resource-group ServianAssignmentRG --server ravixrca4postgresql -n AllowYourIp --start-ip-address 0.0.0.0 --end-ip-address 0.0.0.0
       
-      psql "host=ravixrca4postgresql.postgres.database.azure.com port=5432 dbname=postgres user=servianuser@ravixrca4postgresql password=$(dbpassword) sslmode=require" -t -c "CREATE ROLE servianappuser WITH LOGIN NOSUPERUSER INHERIT CREATEDB CREATEROLE NOREPLICATION PASSWORD $(dbpassword);GRANT azure_pg_admin TO servianappuser;"
+      psql "host=ravixrca4postgresql.postgres.database.azure.com port=5432 dbname=postgres user=servianuser@ravixrca4postgresql password=$(dbpassword) sslmode=require" -t -c "CREATE ROLE servianappuser WITH LOGIN NOSUPERUSER INHERIT CREATEDB CREATEROLE NOREPLICATION PASSWORD '$(dbpassword)';GRANT azure_pg_admin TO servianappuser;"
 
 - task: AzureResourceManagerTemplateDeployment@3
   inputs:
