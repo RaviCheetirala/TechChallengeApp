@@ -12,13 +12,28 @@
             "value": "Australia East"
         },
         "hostingPlanName": {
-            "value": "ASP-ServianAssignmentRG-a2ad"
+            "value": "ASP-ServianAssignmentRG-b821"
         },
         "serverFarmResourceGroup": {
             "value": "ServianAssignmentRG"
         },
         "alwaysOn": {
             "value": false
+        },
+        "sku": {
+            "value": "Basic"
+        },
+        "skuCode": {
+            "value": "B1"
+        },
+        "workerSize": {
+            "value": "0"
+        },
+        "workerSizeId": {
+            "value": "0"
+        },
+        "numberOfWorkers": {
+            "value": "1"
         },
         "linuxFxVersion": {
             "value": "DOCKER|318300/servianapp:latest"
@@ -30,7 +45,7 @@
             "value": ""
         },
         "dockerRegistryPassword": {
-            "value": ""
+            "value": null
         },
         "dockerRegistryStartupCommand": {
             "value": ""
