@@ -27,6 +27,6 @@ steps:
     templateLocation: 'Linked artifact'
     csmFile: 'ARMTemplates/arm_azurepostgsql.json'
     csmParametersFile: 'ARMTemplates/arm_azurepostgsql.parameters.json'
-    overrideParameters: '-administratorLoginPassword $(dbpassword),-serverName samplesqltest'
+    overrideParameters: '-administratorLoginPassword $(dbpassword)'
     deploymentMode: 'Incremental'
 
