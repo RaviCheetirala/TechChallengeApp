@@ -33,5 +33,6 @@ COPY conf.toml ./conf.toml
 COPY --from=build /tmp/swagger/dist ./assets/swagger
 COPY --from=build /swagger.json ./assets/swagger/swagger.json
 COPY --from=build /TechChallengeApp TechChallengeApp
-
-ENTRYPOINT [ "./TechChallengeApp" ]
+RUN  echo "./TechChallengeApp updatedb; ./TechChallengeApp serve" > trigger.sh
+EXPOSE  8080
+ENTRYPOINT [ "/bin/sh", "trigger.sh"]
